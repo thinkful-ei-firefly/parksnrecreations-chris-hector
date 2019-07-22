@@ -1,0 +1,44 @@
+
+* {
+    box-sizing: border-box;
+    text-decoration: none;
+
+  }
+
+  body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+  
+  }
+  
+  .button, input[type="text"] {
+    padding: 5px;
+  }
+  
+
+  table {
+    font-size: 8px;
+    border: 1px solid black;
+    box-sizing: content-box;
+    text-align: center;
+    float: left;
+    font-weight: lighter;
+  }
+
+
+  .button:hover {
+    cursor: pointer;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .error-message {
+      color: red;
+  }
+  
+  .hidden {
+    display: none;
+  }

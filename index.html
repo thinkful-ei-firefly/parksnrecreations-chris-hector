@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="description" content="Search for information about national parks.">
+        <title>National Parks Search</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>National Park Finder</h1>
+
+            <form class="js-form"><p>
+                <label for="search-term">State Search: </label></p>
+                <input type="text" name="search-term" id="js-search-term" required>
+                <p>
+                <label for="max-results">Please choose upto 10 News Feeds</label></p>          <input type="number" name="max-results" id="js-max-results" value="10">   
+                <p>
+                <input type="submit" value="Go!"></p>
+            </form>
+
+            <p class="js-error-message"></p>
+
+            <section class="results hidden" role="region">
+                <h2>Search results: </h2>
+                <ul class="results-list">
+                </ul>
+                <hr>
+                <hr>
+            </section>
+
+            <aside>Please choose states by Abbreviations i.e.:
+            <table class="aside1">
+                <tr>
+                    <th> United States</th>
+                    <th> Abbrev.</th>
+                </tr>
+                    <td>Alabama</td><br>
+                    <td>AL</td>
+                <tr>
+                        <td>Alaska</td>
+                        <td>AK</td>
+                    </tr>
+            
+                <tr>
+                        <td>Arizona</td>
+                        <td>AZ</td>
+                    </tr>
+
+                <tr>
+                        <td>Arkansas</td>
+                        <td>AR</td>
+                    </tr>
+                
+                <tr>
+                        <td>California</td>
+                        <td>CA</td>
+                    </tr>
+                
+                <tr>
+                        <td>Colorado</td>
+                        <td>CO</td>
+                    </tr>
+
+                <tr>
+                        <td>Connecticut</td>
+                        <td>CT</td>
+                    </tr>
+
+                <tr>
+                        <td>Delaware</td>
+                        <td>DE</td>
+                    </tr>
+
+                    <tr>
+                            <td>Florida</td>
+                            <td>FL</td>
+                        </tr>
+
+                <tr>
+                        <td>Georgia</td>
+                        <td>GA</td>
+                    </tr>
+
+                <tr>
+                        <td>Hawaii</td>
+                        <td>HI</td>
+                    </tr>
+
+                    <tr>
+                            <td>Idaho</td>
+                            <td>ID</td>
+                        </tr>
+
+                        <tr>
+                                <td>Illinois</td>
+                                <td>IL</td>
+                            </tr>
+
+                    <tr>
+                            <td>Indiana</td>
+                            <td>IN</td>
+                        </tr>
+
+                        <tr>
+                                <td>Iowa</td>
+                                <td>IA</td>
+                            </tr>
+
+                        <tr>
+                                <td>Kansas</td>
+                                <td>KS</td>
+                            </tr>
+        
+    
+                            <tr>
+                                    <td>Kentucky</td>
+                                    <td>KY</td>
+                                </tr>
+        
+                        <tr>
+                                <td>Louisiana</td>
+                                <td>LA</td>
+                            </tr>
+        
+                            <tr>
+                                    <td>Maine</td>
+                                    <td>ME</td>
+                                </tr>
+
+                        <tr>
+                                <td>Maryland</td>
+                                <td>MD</td>
+                            </tr>
+
+                            <tr>
+                                    <td>Massachusetts</td>
+                                    <td>MA</td>
+                                </tr>
+        
+                        <tr>
+                                <td>Michigan</td>
+                                <td>MI</td>
+                            </tr>
+        
+                            <tr>
+                                    <td>Minnesota</td>
+                                    <td>MN</td>
+                                </tr>
+        
+                                <tr>
+                                        <td>Mississippi</td>
+                                        <td>MS</td>
+                                    </tr>
+            
+                            <tr>
+                                    <td>Missouri</td>
+                                    <td>MO</td>
+                                </tr>
+        
+                            <tr>
+                                    <td>Montana</td>
+                                    <td>MT</td>
+                                </tr>
+        
+                                <tr>
+                                        <td>Nebraska</td>
+                                        <td>NE</td>
+                                    </tr>
+                
+                                <tr>
+                                        <td>Nevada</td>
+                                        <td>NV</td>
+                                    </tr>
+            
+                            <tr>
+                                    <td>New Hampshire</td>
+                                    <td>NH</td>
+                                </tr>
+            
+                                <tr>
+                                        <td>New Jersey</td>
+                                        <td>NJ</td>
+                                    </tr>
+            
+                                    <tr>
+                                            <td>New Mexico</td>
+                                            <td>NM</td>
+                                        </tr>
+
+                                        <tr>
+                                                <td>New York</td>
+                                                <td>NY</td>
+                                            </tr>
+                    
+                                    <tr>
+                                            <td>North Carolina</td>
+                                            <td>NC</td>
+                                        </tr>
+                    
+                                    <tr>
+                                            <td>North Dakota</td>
+                                            <td>ND</td>
+                                        </tr>
+                
+                                        <tr>
+                                                <td>Ohio</td>
+                                                <td>OH</td>
+                                            </tr>
+                    
+                                            <tr>
+                                                    <td>Oklahoma</td>
+                                                    <td>OK</td>
+                                                </tr>
+                        
+                                        <tr>
+                                                <td>Oregon</td>
+                                                <td>OR</td>
+                                            </tr>
+                        
+                                    <tr>
+                                            <td>Pennsylvania</td>
+                                            <td>PA</td>
+                                        </tr>
+                
+                                        <tr>
+                                                <td>Rhode Island</td>
+                                                <td>RI</td>
+                                            </tr>
+                                            <tr>
+                                                    <td>South Carolina</td>
+                                                    <td>SC</td>
+                                                </tr>
+                                
+                                        <tr>
+                                                <td>South Dakota</td>
+                                                <td>SD</td>
+                                            </tr>
+                        
+                                            <tr>
+                                                    <td>Tennessee</td>
+                                                    <td>TN</td>
+                                                </tr>
+                        
+                                                <tr>
+                                                        <td>Texas</td>
+                                                        <td>TX</td>
+                                                    </tr>
+                                
+                                                    <tr>
+                                                            <td>Utah</td>
+                                                            <td>UT</td>
+                                                        </tr>
+                                
+                                                <tr>
+                                                        <td>Vermont</td>
+                                                        <td>VT</td>
+                                                    </tr>
+                    
+                                        <tr>
+                                                <td>Virginia</td>
+                                                <td>VA</td>
+                                            </tr>
+                    
+                                            <tr>
+                                                    <td>Washington</td>
+                                                    <td>WA</td>
+                                                </tr>
+
+                                                <tr>
+                                                        <td>West Virgina</td>
+                                                        <td>WV</td>
+                                                    </tr>
+                            
+                                            <tr>
+                                                    <td>Wisconsin</td>
+                                                    <td>WI</td>
+                                                </tr>
+                            
+                                                <tr>
+                                                        <td>Wyoming</td>
+                                                        <td>WY</td>
+                                                    </tr>
+
+                                                    <tr>
+                                                            <td>District of Columbia</td>
+                                                            <td>DC</td>
+                                                        </tr>
+                                                        </h6>
+                            
+            <p><h6>This list does not include Commonwealth/Territory or Miltary States ie Marshall Island, or Military owned States.</h6></p>
+                                    
+                                        
+           
+            </table>
+            </aside>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
